@@ -1,7 +1,7 @@
 const weatherform = document.querySelector("form");
 const messageTwo = document.querySelector("#message2");
 const messageOne = document.querySelector("#message1");
-const site = 1;
+const site = 0;
 let link = "";
 if(site == 1){
     link = "http://localhost:3000";
