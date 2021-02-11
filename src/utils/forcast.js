@@ -10,7 +10,7 @@ const forCast = (latitude,longitude,callback) => {
             console.log("Unable to find location");
         }
         else {
-            callback(undefined,body);
+            callback(undefined,body.current.weather_descriptions[0] +" It is currently " + body.current.temperature + " degress out. It feels like " + body.current.feelslike + " degress out.");
         }
     });
 }

@@ -1,15 +1,21 @@
 const weatherform = document.querySelector("form");
 const messageTwo = document.querySelector("#message2");
 const messageOne = document.querySelector("#message1");
+const site = 0;
+if(site == 1){
+    const link = "http://localhost:3000"
+}else {
+    const link = ""
+}
 
 const getForCast = function (location){
-    fetch("/weather?address="+location).then((response)=>{
+    fetch(link + "/weather?address=" + location).then((response)=>{
         response.json().then((data)=>{
             if(data.eror){
                 console.log("no adddress..!")
             }else{
                 messageOne.textContent = JSON.stringify(data.location);
-                messageTwo.textContent = JSON.stringify(data.forcast);
+                messageTwo.textContent = data.forcast;
             }
         });
     });
