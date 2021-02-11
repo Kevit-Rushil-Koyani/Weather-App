@@ -19,7 +19,7 @@ const getForCast = function (location){
                 messageTwo.textContent = data.forcast;
             }
         });
-    });
+    }); 
 }
 
 
