@@ -40,7 +40,7 @@ app.get("/help",(req,res) => {
 app.get("/weather",(req,res) => {
     if(!req.query.address){
         return res.send({
-            error:"no address"
+            error:"no address",
         })
     }
     geoCode(req.query.address,(error,{latitude,longitude,location} = {}) => {
@@ -80,7 +80,6 @@ app.get("/help/*",(req,res) => {
         title:'404',
         'name' : 'R K',
         error:'Error: 404. Help Page not Found'
-
     })
 });
 
@@ -89,7 +88,6 @@ app.get('*',(req,res) => {
         title:'404',
         'name' : 'R K',
         error:'Error: 404. Page not Found'
-
     })
 })
 
@@ -97,11 +95,3 @@ app.get('*',(req,res) => {
 app.listen(port,() => {
     console.log("port No : " + port);
 });
-let site;
-if (process.env.PORT){
-    site = 0
-}
-else site = 1
-module.exports={
- site
-}
