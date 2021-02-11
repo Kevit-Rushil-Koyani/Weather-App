@@ -4,7 +4,8 @@ const hbs = require("hbs");
 const app = express();
 const geoCode = require("./utils/geocode.js");
 const forCast = require("./utils/forcast.js");
- 
+const port = process.env.PORT || 3000
+
 const viewsPath = path.join(__dirname,'../templates/views');
 const partialsPath = path.join(__dirname,"../templates/partials")
 
@@ -93,6 +94,6 @@ app.get('*',(req,res) => {
 })
 
 
-app.listen(3000,() => {
-    console.log("port No : 3000");
+app.listen(port,() => {
+    console.log("port No : " + port);
 });
