@@ -5,10 +5,10 @@ const app = express();
 const geoCode = require("./utils/geocode.js");
 const forCast = require("./utils/forcast.js");
 const port = process.env.PORT || 3000
-
+ 
 const viewsPath = path.join(__dirname,'../templates/views');
 const partialsPath = path.join(__dirname,"../templates/partials")
- 
+
 app.set('view engine','hbs');
 app.set('views',viewsPath);
 hbs.registerPartials(partialsPath);
